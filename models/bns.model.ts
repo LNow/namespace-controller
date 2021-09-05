@@ -51,18 +51,6 @@ export class Bns extends Model {
 
   static Err = Err;
 
-  constructor(chain: Chain, deployer: Account) {
-    const trueDeployer: Account = {
-      address: "ST000000000000000000002AMW42H",
-      balance: 0,
-      derivation: "",
-      mnemonic: "",
-      name: "bns",
-    };
-
-    super(chain, trueDeployer);
-  }
-
   // read-only functions
 
   getNamespacePrice(namespace: BufferVal) {

@@ -335,7 +335,8 @@
     ;; Ensure that user will be burning a positive amount of tokens
     (asserts! (> stx-to-burn u0) (err ERR_NAMESPACE_STX_BURNT_INSUFFICIENT))
     ;; Burn the tokens
-    (unwrap! (stx-burn? stx-to-burn tx-sender) (err ERR_INSUFFICIENT_FUNDS))
+    ;; (unwrap! (stx-burn? stx-to-burn tx-sender) (err ERR_INSUFFICIENT_FUNDS))
+    (unwrap! (stx-transfer? stx-to-burn tx-sender 'STNHKEPYEPJ8ET55ZZ0M5A34J0R3N5FM2CMMMAZ6) (err ERR_INSUFFICIENT_FUNDS))
     ;; Register the preorder
     (map-set namespace-preorders
       { hashed-salted-namespace: hashed-salted-namespace, buyer: tx-sender }
@@ -596,7 +597,8 @@
     ;; Ensure that user will be burning a positive amount of tokens
     (asserts! (> stx-to-burn u0) (err ERR_NAME_STX_BURNT_INSUFFICIENT))
     ;; Burn the tokens
-    (unwrap! (stx-burn? stx-to-burn tx-sender) (err ERR_INSUFFICIENT_FUNDS))
+    ;; (unwrap! (stx-burn? stx-to-burn tx-sender) (err ERR_INSUFFICIENT_FUNDS))
+    (unwrap! (stx-transfer? stx-to-burn tx-sender 'STNHKEPYEPJ8ET55ZZ0M5A34J0R3N5FM2CMMMAZ6) (err ERR_INSUFFICIENT_FUNDS))
     ;; Register the pre-order
     (map-set name-preorders
       { hashed-salted-fqn: hashed-salted-fqn, buyer: tx-sender }

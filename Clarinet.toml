@@ -6,8 +6,16 @@ requirements = []
 path = "contracts/base.clar"
 depends_on = []
 
+[contracts.controller]
+path = "contracts/controller.clar"
+depends_on = ["bns"]
+
 
 # EXTERNAL CONTRACTS
 [contracts.sip-010-trait-ft-standard]
 path = "contracts/external/sip-010-trait-ft-standard.clar"
+depends_on = []
+
+[contracts.bns]
+path = "contracts/external/bns.clar"
 depends_on = []
